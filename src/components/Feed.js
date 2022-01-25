@@ -1,13 +1,15 @@
-import React from 'react'; 
+import Post from './Post';
+
 import './Feed.css';
-import MessageSender from './MessageSender';
 
-
-function Feed(){
-    return(
+function Feed({ posts }) {
+    return (
         <div className='feed'>
-            <MessageSender />
-            {/* MessageSender */}
+            {
+                posts.map((post) => (
+                    <Post key={post.Id+1} post={post} />
+                ))
+            }
         </div>
     );
 }

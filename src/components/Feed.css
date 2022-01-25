@@ -1,8 +1,13 @@
 .feed {
     flex: 1;
-    padding: 30px 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-template-rows: masonry;
+
+    column-count: 5;
+    column-gap: 10px;
+
+    background-color: var(--contentBG);
+    border-radius: 35px;
+    padding: 10px;
+    margin: 10px;
 }
