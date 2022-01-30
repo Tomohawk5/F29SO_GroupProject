@@ -24,6 +24,7 @@
 }
 
 .app {
-    background-color: var(--background);
-    height: auto;
+    background-color: rgb(255, 215, 235);
+    width: auto;
+    height: 900px;
 }

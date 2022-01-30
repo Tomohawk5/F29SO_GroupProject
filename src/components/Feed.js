@@ -1,3 +1,6 @@
+import React from 'react'; 
+import './Feed.css';
+import MessageSender from './MessageSender';
 import Post from './Post';
 
 import './Feed.css';
@@ -5,11 +8,13 @@ import './Feed.css';
 function Feed({ posts }) {
     return (
         <div className='feed'>
-            {
-                posts.map((post) => (
-                    <Post key={post.Id+1} post={post} />
-                ))
-            }
+            <MessageSender />
+            <Post 
+            message="this works"
+            timestamp='timestamp'
+            username='me'
+            //image={image}
+            />
         </div>
     );
 }
