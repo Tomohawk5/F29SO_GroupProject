@@ -45,7 +45,11 @@ const SettingsDropDown = () => {
     return <div className="dropdown">
         <DropdownItem>Option 1</DropdownItem>
         <DropdownItem>Option 2</DropdownItem>
-        <DropdownItem onClick={toggleTheme()}>Theme</DropdownItem>
+        <DropdownItem>
+            <p onClick={toggleTheme()}>
+                Theme
+            </p>
+        </DropdownItem>
         <DropdownItem>Option 4</DropdownItem>
         <DropdownItem>Option 5</DropdownItem>
     </div>;

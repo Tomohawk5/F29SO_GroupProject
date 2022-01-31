@@ -1,9 +1,9 @@
 .dropdown {
     position: absolute;
-    top: calc(var(--nav-size) - 2px);
+    top: calc(var(--nav-size) - 0.5rem);
     width: 300px;
     transform: translateX(-45%);
-    background-color: var(--background);
+    background-color: var(--foreground);
     border: white;
     border-radius: var(--border-radius);
     padding: 1rem;
@@ -21,7 +21,7 @@
 }
 
 .menu-item:hover {
-    filter: brightness(1.2);
+    background-color: var(--foreground-active);
 }
 
 .icon-right {

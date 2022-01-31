@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../css/Post.css";
 
 function Post({ image, username, timestamp, message }) {
-  const [likes, setLikes] = useState(100);
-  const [dislikes, setDisLikes] = useState(100);
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDisLikes] = useState(0);
   const [likeactive, setLikeActive] = useState(false);
   const [dislikeactive, setDislikeActive] = useState(false);
 
@@ -55,7 +55,7 @@ function Post({ image, username, timestamp, message }) {
           <button>🔀</button>
           <button>🚩</button>
         </div>
-        <p>{likes} {likes > 1 ? "people have" : "person has"} liked this</p>
+        <p>{likes > 0 ? likes : ""} {likes === 0 ? "nobody has " : (likes > 1 ? "people have" : "person has")} liked this</p>
         <button>💬</button>
         <p>Comments</p>
       </div>

@@ -1,9 +1,6 @@
 import React from 'react';
-import './Feed.css';
-import MessageSender from './MessageSender';
+import '../css/Feed.css';
 import Post from './Post';
-
-import './Feed.css';
 
 function Feed({ posts }) {
     function now() {
