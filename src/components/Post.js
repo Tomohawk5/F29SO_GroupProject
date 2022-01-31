@@ -1,49 +1,63 @@
 import React, { useState } from "react";
-import "./Post.css";
+import "../css/Post.css";
 
 function Post({ image, username, timestamp, message }) {
-  const [like, setLike] = useState(100);
-  const [dislike, setdisLike] = useState(100);
-  const [likeactive, setlikeactive] = useState(false);
-  const [dislikeactive, setdislikeactive] = useState(false);
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDisLikes] = useState(0);
+  const [likeactive, setLikeActive] = useState(false);
+  const [dislikeactive, setDislikeActive] = useState(false);
 
-  function Like() {
+  function like() {
     if (likeactive) {
-      setlikeactive(false);
-      setLike(like - 1);
+      setLikeActive(false);
+      setLikes(likes - 1);
     } else {
-      setlikeactive(true);
-      setLike(like + 1);
+      setLikeActive(true);
+      setLikes(likes + 1);
     }
     if (dislikeactive) {
-      setdislikeactive(false);
-      setLike(like + 1);
-      setLike(dislike - 1);
+      setDislikeActive(false);
+      setLikes(likes + 1);
+      setLikes(dislikes - 1);
+    }
+  }
+
+  function disLike() {
+    if (dislikeactive) {
+      setDislikeActive(false);
+      setDisLikes(dislikes - 1);
+    } else {
+      setDislikeActive(true);
+      setDisLikes(dislikes + 1);
+    }
+    if (likeactive) {
+      setLikeActive(false);
+      setLikes(likes - 1);
+      setDisLikes()
     }
   }
 
   return (
     <div className="post">
-      <div className="post__topInfo">
+      <div className="postHeader">
         <h3>{username}</h3>
-        <p>Timestamp</p>
+        <p>{timestamp}</p>
       </div>
-      <div className="post__bottom">
-        <p>{message}</p>
-      </div>
-      <div className="post__image">
-        {/* take the image which will come as a prope */}
-        <img src={image} alt="" />
-      </div>
-
-      <div className="post__options">
-        <div className="post__option">
-          <button onClick={Like}>Like {Like}</button>
+      <figure className="postContent">
+        <img src={image} />
+        <figcaption>{message}</figcaption>
+      </figure>
+      <div className="postFooter">
+        <div className="postReactions">
+          <button onClick={like}>👍</button>
+          <button>👎</button>
+          <button>✉️</button>
+          <button>🔀</button>
+          <button>🚩</button>
         </div>
-
-        <div className="post__option">
-          <p>Comment</p>
-        </div>
+        <p>{likes > 0 ? likes : ""} {likes === 0 ? "nobody has " : (likes > 1 ? "people have" : "person has")} liked this</p>
+        <button>💬</button>
+        <p>Comments</p>
       </div>
     </div>
   );

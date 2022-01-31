@@ -1,55 +1,57 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import Settings from './Settings';
-import "./Header.css";
+import Navbar from './navbar/Navbar';
+import NavItem from './navbar/NavItem';
+import NavLink from './navbar/NavLink';
+import SettingsDropDown from './SettingsDropDown';
+import Avatar from './Avatar.js';
+
+import '../css/Navbar.css';
 
 function Header() {
+  const user = 'Haia';
   return (
     /*making the header, we need to divide the header into three parts 
           each part will have items inside of it such as tabs, logo and so on
         */
-    <div className="header">
-      <div className="header__left">
-        <img src="/images/logo.PNG" alt=""></img>
-        <div className="SearchBar__input">
+    <Navbar>
+      <div className="navbar-group--left">
+        <img src="/images/logo.PNG" alt="Mashup Logo"></img>
+        <div className="search-bar--input">
           <input placeholder="Search mashup" type="text"></input>
         </div>
       </div>
 
-      {/*Here I'm declaring the bottons which will take us to other pages*/}
-      <div className="header__middle">
-        <Link to="/" className="Header__item">
-          Home
-        </Link>
-        <Link to="MarketPlace" className="Header__item">
-          Market Place
-        </Link>
-        <Link to="DoodleCollab" className="Header__item">
-          Doodle Collab
-        </Link>
-        <Link to="Settings" className="Header__item">
-          Settings
-        </Link>
-        <Link to="Library" className="Header__item">
-          Library
-        </Link>
+      {/*Here I'm declaring the buttons which will take us to other pages*/}
+      <div className="navbar-group--middle">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="MarketPlace">Market Place</NavLink>
+        <NavLink to="DoodleCollab">Doodle Collab</NavLink>
+        <NavLink to="Library">Library</NavLink>
       </div>
 
       {/*For the profile picture/username...still need to find out to have a picture*/}
-      <div className="header__right">
-        <div className="profile_image">
-          <h4>Magik</h4>
-        </div>
-        <Link to="Login" className="Header__item">
-          Login
-        </Link>
-        <Link to="Signup" className="Header__item">
-          Sign up
-        </Link>
-        <Settings />
+      <div className="navbar-group--right">
+        
+        {/* {user ? (
+          <Avatar userID={0}/>) :
+          (<>
+            <Link to="Login" className="header__item">
+              Login
+            </Link>
+            <Link to="Signup" className="header__item">
+              Sign up
+            </Link>
+          </>)} */}
+
+        <NavItem icon="👤" />
+        <NavItem icon="💬" />
+        <NavItem icon="⚙️">
+          <SettingsDropDown />
+        </NavItem>
       </div>
-    </div>
+    </Navbar>
   );
 }
 

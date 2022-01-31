@@ -1,0 +1,18 @@
+.profile {
+    --img-size: calc(var(--nav-size) * 0.8);
+    width: var(--img-size);
+    height: var(--img-size);
+    background-color: var(--background);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+    display :flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+}
+
+.profile img {
+    width: 80%;
+    height: 80%;
+}
