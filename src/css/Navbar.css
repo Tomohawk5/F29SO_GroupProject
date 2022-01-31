@@ -2,6 +2,7 @@
     height: var(--nav-size);
     background-color: var(--foreground);
     padding: 0 1rem;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -21,30 +22,43 @@ div[class|="navbar-group"] {
 }
 
 .navbar-group--left {
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .navbar-group--middle {
+    justify-content: space-between;
     flex-direction: row;
 }
 
+.navbar-group--right {
+    justify-content: flex-end;
+    width: fit-content;
+}
+
 .nav-item {
-    width: calc(var(--nav-size) * 0.8);
+    width: auto;
     display :flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     outline: none;
     padding: 0 30px;
+    text-transform: uppercase;
 }
 
 .nav-link {
-    width: 200px;
+    height: 0%;
+    background-color: var(--foreground);
+    border-radius: calc(var(--nav-size) * 0.5);
+    padding: 20px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    transition: filter 300ms;
 }
 
 .nav-link:hover {
-    filter: brightness(1.2);
+    color: var(--title-colour);
+    background-color: var(--foreground-active);
 }
 
 .icon-button {
@@ -61,8 +75,7 @@ div[class|="navbar-group"] {
     transition: filter 300ms;
 }
 
-.icon-button svg {
-    fill: var(--text-colour);
+.icon-button img {
     width: 20px;
     height: 20px;
 }

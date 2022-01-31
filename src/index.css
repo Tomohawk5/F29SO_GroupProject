@@ -7,7 +7,7 @@
   /* PANTONE VERI PERI */
   --background: rgb(102, 103, 171);
   --foreground: rgb(255, 255, 255);
-  --foreground-active: rgb(212, 212, 212);
+  --foreground-active: rgb(249, 249, 249);
   
   --contentBG: rgb(58, 59, 146);
   --text-colour: rgb(32, 32, 32);
@@ -27,9 +27,6 @@
   --textColour: rgb(32, 32, 32);
   --title-colour: rgb(102, 103, 171);
   --main: rgb(255, 255, 255);
-
-  --border-radius: 15px;
-  --nav-size: 60px;
 }
 
 body {

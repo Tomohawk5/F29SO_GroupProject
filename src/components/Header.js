@@ -7,6 +7,8 @@ import NavLink from './navbar/NavLink';
 import SettingsDropDown from './SettingsDropDown';
 import Avatar from './Avatar.js';
 
+import '../css/Navbar.css';
+
 function Header() {
   const user = 'Haia';
   return (
@@ -31,7 +33,8 @@ function Header() {
 
       {/*For the profile picture/username...still need to find out to have a picture*/}
       <div className="navbar-group--right">
-        {user ? (
+        
+        {/* {user ? (
           <Avatar userID={0}/>) :
           (<>
             <Link to="Login" className="header__item">
@@ -40,7 +43,7 @@ function Header() {
             <Link to="Signup" className="header__item">
               Sign up
             </Link>
-          </>)}
+          </>)} */}
 
         <NavItem icon="👤" />
         <NavItem icon="💬" />
