@@ -13,18 +13,32 @@
     --rajah: #fbb05cff;
     */
     --foreground: rgb(255, 255, 255);
-    --contentBG: rgb(215, 215, 215);
-    --textColour: rgb(0, 0, 0);
+    --contentBG: rgb(58, 59, 146);
+    --textColour: rgb(32, 32, 32);
+    --titleColour: rgb(102, 103, 171);
     --main: rgb(255, 255, 255);
+
+    --border-radius: 15px;
+    --nav-size: 60px;
 }
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
 
 .app__body {
     display: flex;
-
 }
 
 .app {
-    background-color: rgb(255, 215, 235);
+    background-color: var(--background);
     width: auto;
-    height: 900px;
+    height: 160vh;
 }

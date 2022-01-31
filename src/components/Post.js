@@ -3,47 +3,61 @@ import "./Post.css";
 
 function Post({ image, username, timestamp, message }) {
   const [like, setLike] = useState(100);
-  const [dislike, setdisLike] = useState(100);
-  const [likeactive, setlikeactive] = useState(false);
-  const [dislikeactive, setdislikeactive] = useState(false);
+  const [dislike, setDisLike] = useState(100);
+  const [likeactive, setLikeActive] = useState(false);
+  const [dislikeactive, setDislikeActive] = useState(false);
 
   function Like() {
     if (likeactive) {
-      setlikeactive(false);
+      setLikeActive(false);
       setLike(like - 1);
     } else {
-      setlikeactive(true);
+      setLikeActive(true);
       setLike(like + 1);
     }
     if (dislikeactive) {
-      setdislikeactive(false);
+      setDislikeActive(false);
       setLike(like + 1);
       setLike(dislike - 1);
     }
   }
 
+  function disLike() {
+    if (dislikeactive) {
+      setDislikeActive(false);
+      setDisLike(dislike - 1);
+    } else {
+      setDislikeActive(true);
+      setDisLike(dislike + 1);
+    }
+    if (likeactive) {
+      setLikeActive(false);
+      setLike(like - 1);
+      setDisLike()
+    }
+  }
+
   return (
     <div className="post">
-      <div className="post__topInfo">
+      <div className="postHeader">
         <h3>{username}</h3>
-        <p>Timestamp</p>
+        <p>{timestamp}</p>
       </div>
-      <div className="post__bottom">
-        <p>{message}</p>
-      </div>
-      <div className="post__image">
-        {/* take the image which will come as a prope */}
-        <img src={image} alt="" />
-      </div>
-
-      <div className="post__options">
-        <div className="post__option">
-          <button onClick={Like}>Like {Like}</button>
+      <figure className="postContent">
+        <img src={image} />
+        <figcaption>{message}</figcaption>
+      </figure>
+      <div className="postFooter">
+        <div className="postReactions">
+          <button onClick={Like}>👍</button>
+          <button>👎</button>
+          <button>✉️</button>
+          <button>🔀</button>
+          <button>🚩</button>
         </div>
-
-        <div className="post__option">
-          <p>Comment</p>
-        </div>
+        <p>{like} {like > 1 ? "people have" : "person has"} liked this</p>
+        <button>💬</button>
+        <p>Comments</p>
       </div>
     </div>
   );
