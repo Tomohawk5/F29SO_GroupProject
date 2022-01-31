@@ -18,7 +18,6 @@ function App() {
         ) : (
           <>
             <Header />
-            
             <div className="appBody">
               {/*<SideBar />*/}
               {/*Feed*/}

@@ -1,6 +1,7 @@
 *{
   margin: 0;
   color: var(--text-color);
+  transition: background-color 300ms ease-in;
 }
 
 :root {
@@ -9,7 +10,7 @@
   --foreground: rgb(255, 255, 255);
   --foreground-active: rgb(249, 249, 249);
   
-  --contentBG: rgb(58, 59, 146);
+  --content-background: rgb(58, 59, 146);
   --text-colour: rgb(32, 32, 32);
   --title-colour: rgb(102, 103, 171);
   --main: rgb(255, 255, 255);
@@ -18,12 +19,13 @@
   --nav-size: 60px;
 }
 
-.dark {
+[data-theme="dark"] {
   /* PANTONE VERI PERI */
   --background: rgb(33, 33, 33);
-  --foreground: rgb(49, 78, 62);
+  --foreground: rgb(102, 103, 171);
+  --foreground-active: rgb(249, 249, 249);
 
-  --contentBG: rgb(58, 59, 146);
+  --content-background: rgb(58, 59, 146);
   --textColour: rgb(32, 32, 32);
   --title-colour: rgb(102, 103, 171);
   --main: rgb(255, 255, 255);
