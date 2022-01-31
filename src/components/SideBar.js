@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react'; 
-import './SideBar.css';
+import '../css/SideBar.css';
 import SideBarRow from './SideBarRow';
 
 function SideBar(){
@@ -10,7 +10,6 @@ function SideBar(){
             <SideBarRow title="Market Place"/>
             <SideBarRow title="videos"/>
             <SideBarRow title="Library"/>
-   
         </div>
     );
 }

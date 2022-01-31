@@ -1,5 +1,34 @@
 *{
   margin: 0;
+  color: var(--text-color);
+}
+
+:root {
+  /* PANTONE VERI PERI */
+  --background: rgb(102, 103, 171);
+  --foreground: rgb(255, 255, 255);
+  
+  --contentBG: rgb(58, 59, 146);
+  --textColour: rgb(32, 32, 32);
+  --titleColour: rgb(102, 103, 171);
+  --main: rgb(255, 255, 255);
+
+  --border-radius: 15px;
+  --nav-size: 60px;
+}
+
+.dark {
+  /* PANTONE VERI PERI */
+  --background: rgb(33, 33, 33);
+  --foreground: rgb(49, 78, 62);
+
+  --contentBG: rgb(58, 59, 146);
+  --textColour: rgb(32, 32, 32);
+  --titleColour: rgb(102, 103, 171);
+  --main: rgb(255, 255, 255);
+
+  --border-radius: 15px;
+  --nav-size: 60px;
 }
 
 body {
@@ -14,4 +43,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+a {
+  text-decoration: none;
 }

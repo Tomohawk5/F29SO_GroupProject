@@ -1,0 +1,9 @@
+.appBody {
+    display: flex;
+}
+
+.app {
+    background-color: var(--background);
+    width: auto;
+    height: 160vh;
+}

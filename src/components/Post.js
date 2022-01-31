@@ -1,39 +1,39 @@
 import React, { useState } from "react";
-import "./Post.css";
+import "../css/Post.css";
 
 function Post({ image, username, timestamp, message }) {
-  const [like, setLike] = useState(100);
-  const [dislike, setDisLike] = useState(100);
+  const [likes, setLikes] = useState(100);
+  const [dislikes, setDisLikes] = useState(100);
   const [likeactive, setLikeActive] = useState(false);
   const [dislikeactive, setDislikeActive] = useState(false);
 
-  function Like() {
+  function like() {
     if (likeactive) {
       setLikeActive(false);
-      setLike(like - 1);
+      setLikes(likes - 1);
     } else {
       setLikeActive(true);
-      setLike(like + 1);
+      setLikes(likes + 1);
     }
     if (dislikeactive) {
       setDislikeActive(false);
-      setLike(like + 1);
-      setLike(dislike - 1);
+      setLikes(likes + 1);
+      setLikes(dislikes - 1);
     }
   }
 
   function disLike() {
     if (dislikeactive) {
       setDislikeActive(false);
-      setDisLike(dislike - 1);
+      setDisLikes(dislikes - 1);
     } else {
       setDislikeActive(true);
-      setDisLike(dislike + 1);
+      setDisLikes(dislikes + 1);
     }
     if (likeactive) {
       setLikeActive(false);
-      setLike(like - 1);
-      setDisLike()
+      setLikes(likes - 1);
+      setDisLikes()
     }
   }
 
@@ -49,13 +49,13 @@ function Post({ image, username, timestamp, message }) {
       </figure>
       <div className="postFooter">
         <div className="postReactions">
-          <button onClick={Like}>👍</button>
+          <button onClick={like}>👍</button>
           <button>👎</button>
           <button>✉️</button>
           <button>🔀</button>
           <button>🚩</button>
         </div>
-        <p>{like} {like > 1 ? "people have" : "person has"} liked this</p>
+        <p>{likes} {likes > 1 ? "people have" : "person has"} liked this</p>
         <button>💬</button>
         <p>Comments</p>
       </div>

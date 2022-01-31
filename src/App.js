@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "./css/App.css";
 import Header from "./components/Header";
-import SideBar from "./components/SideBar";
 import Feed from "./components/Feed";
 import MarketPlace from "./tabs/Marketplace";
 import DoodleCollab from "./tabs/DoodleCollab";
@@ -19,11 +18,10 @@ function App() {
         ) : (
           <>
             <Header />
-
-            <div className="app__body">
+            
+            <div className="appBody">
               {/*<SideBar />*/}
               {/*Feed*/}
-
               <Routes>
                 <Route exact path="Login" element={<Login />} />
                 <Route exact path="MarketPlace" element={<MarketPlace />} />

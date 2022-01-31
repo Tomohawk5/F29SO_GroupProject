@@ -1,5 +1,5 @@
 import React from 'react';
-import './SideBarRow.css'; 
+import '../css/SideBarRow.css'; 
 
 // adding props so I can pass in different atributes in SideBar class
 function SideBarRow({src, title }){

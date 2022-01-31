@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import Settings from './Settings';
-import "./Header.css";
+import Navbar from './navbar/Navbar';
+import NavItem from './navbar/NavItem';
+import "../css/Header.css";
+import SettingsDropDown from './SettingsDropDown';
 
 function Header() {
+  const user = 'Haia';
   return (
     /*making the header, we need to divide the header into three parts 
           each part will have items inside of it such as tabs, logo and so on
@@ -28,9 +31,6 @@ function Header() {
         <Link to="DoodleCollab" className="Header__item">
           Doodle Collab
         </Link>
-        <Link to="Settings" className="Header__item">
-          Settings
-        </Link>
         <Link to="Library" className="Header__item">
           Library
         </Link>
@@ -38,16 +38,27 @@ function Header() {
 
       {/*For the profile picture/username...still need to find out to have a picture*/}
       <div className="header__right">
-        <div className="profile_image">
-          <h4>Magik</h4>
-        </div>
-        <Link to="Login" className="Header__item">
-          Login
-        </Link>
-        <Link to="Signup" className="Header__item">
-          Sign up
-        </Link>
-        <Settings />
+        {user ? (
+          <div className="profile_image">
+            <h4>Magik</h4>
+          </div>) :
+          (<>
+            <Link to="Login" className="Header__item">
+              Login
+            </Link>
+            <Link to="Signup" className="Header__item">
+              Sign up
+            </Link>
+          </>)}
+
+        <Navbar className="header__item">
+          <NavItem icon="👤" />
+          <NavItem icon="💬" />
+
+          <NavItem icon="⚙️">
+            <SettingsDropDown />
+          </NavItem>
+        </Navbar>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./MessageSender.css";
+import "../css/MessageSender.css";
 
 function MessageSender() {
   //keeping track of the input
