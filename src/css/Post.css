@@ -8,7 +8,7 @@
 
     height: fit-content;
 
-    background-color: white;
+    background-color: var(--content-background);
     color: var(--textColour);
   }
 
@@ -19,11 +19,12 @@
 }
 
 .postHeader > h3 {
-    color: var(--titleColour);
+    color: var(--text-high-emphasis);
 }
 
 .postHeader > p {
     text-align: right;
+    color: var(--text-disabled);
 }
 
 .postContent {
@@ -37,15 +38,17 @@
 
 .postContent > figcaption {
     padding: var(--border-radius);
+    padding-bottom: 0;
+    color: var(--text-medium-emphasis);
 }
 
 .postFooter {
     height: auto;
     padding: var(--border-radius);
+    padding-top: 0.5em;
 }
 
 .postReactions {
-    background: white;
     width: 100%;
     height: 35px;
     column-count: 5;
@@ -56,9 +59,21 @@
 .post button {
     width: 85%;
     height: 30px;
-    margin: 0px 7.5% 0px 7.5%;
+    margin: 0px 7.5%;
     border: none;
     border-radius: var(--border-radius);
+    background-color: var(--button-background);
+    color: var(--button-content);
+    transition: filter 300ms;
+}
+
+.post button:hover {
+    filter: brightness(0.9);
+}
+
+[data-theme="dark"]
+.post button:hover {
+    filter: brightness(1.2);
 }
 
 .postFooter > span {
@@ -66,9 +81,20 @@
     columns: 2;
     display: inline-block;
     text-align: center;
-    background: #000;
+    justify-items: stretch;
+}
+
+.postFooter > span > p {
+    justify-self: left;
+    color: var(--text-medium-emphasis);
+}
+
+.postFooter > span > button {
+    justify-self: right;
+    width: 95%;
 }
 
 .postFooter > p {
-    color: var(--textColour);
+    margin: 0.5rem;
+    color: var(--text-disabled);
 }

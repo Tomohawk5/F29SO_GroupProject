@@ -8,12 +8,18 @@
   /* PANTONE VERI PERI */
   --background: rgb(102, 103, 171);
   --foreground: rgb(255, 255, 255);
-  --foreground-active: rgb(249, 249, 249);
+  --foreground-active: rgb(238, 238, 238);
   
-  --content-background: rgb(58, 59, 146);
-  --text-colour: rgb(32, 32, 32);
+  --content-background: rgb(255, 255, 255);
+
   --title-colour: rgb(102, 103, 171);
-  --main: rgb(255, 255, 255);
+  --text-colour: rgb(32, 32, 32);
+  --text-high-emphasis: rgb(33.15, 33.15, 33.15);
+  --text-medium-emphasis: rgb(76.5, 76.5, 76.5);
+  --text-disabled: rgb(158.1, 158.1, 158.1);
+
+  --button-background: rgb(249, 249, 249);
+  --button-content: var(--text-medium-emphasis);
 
   --border-radius: 15px;
   --nav-size: 60px;
@@ -21,14 +27,23 @@
 
 [data-theme="dark"] {
   /* PANTONE VERI PERI */
-  --background: rgb(33, 33, 33);
+  --background: rgb(12, 12, 12);
   --foreground: rgb(102, 103, 171);
-  --foreground-active: rgb(249, 249, 249);
+  --foreground-active: rgb(73, 74, 148);
 
-  --content-background: rgb(58, 59, 146);
-  --textColour: rgb(32, 32, 32);
+  --content-background: rgb(49, 49, 49);
+
   --title-colour: rgb(102, 103, 171);
-  --main: rgb(255, 255, 255);
+  --text-colour: rgb(220, 220, 220);
+  --text-high-emphasis: rgb(255, 255, 255);
+  --text-medium-emphasis: rgb(153, 153, 153);
+  --text-disabled: rgb(97, 97, 97);
+
+  --button-background: rgb(72, 72, 72);
+  --button-content: var(--text-medium-emphasis);
+
+  --border-radius: 15px;
+  --nav-size: 60px;
 }
 
 body {

@@ -48,11 +48,12 @@ div[class|="navbar-group"] {
 
 .nav-link {
     height: 0%;
-    background-color: var(--foreground);
-    border-radius: calc(var(--nav-size) * 0.5);
     padding: 20px;
+    border-radius: calc(var(--nav-size) * 0.5);
     display: flex;
     align-items: center;
+    background-color: var(--foreground);
+    color: var(--text-high-emphasis);
     cursor: pointer;
 }
 

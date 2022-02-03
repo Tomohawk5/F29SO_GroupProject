@@ -44,7 +44,7 @@ function Post({ image, username, timestamp, message }) {
         <p>{timestamp}</p>
       </div>
       <figure className="postContent">
-        <img src={image} />
+        <img src={image} alt="post content" />
         <figcaption>{message}</figcaption>
       </figure>
       <div className="postFooter">
@@ -56,8 +56,10 @@ function Post({ image, username, timestamp, message }) {
           <button>🚩</button>
         </div>
         <p>{likes > 0 ? likes : ""} {likes === 0 ? "nobody has " : (likes > 1 ? "people have" : "person has")} liked this</p>
-        <button>💬</button>
-        <p>Comments</p>
+        <span>
+          <p>Comments</p>
+          <button>💬 leave a comment</button>
+        </span>
       </div>
     </div>
   );
